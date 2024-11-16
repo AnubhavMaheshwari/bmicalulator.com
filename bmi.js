@@ -1,3 +1,11 @@
+document.getElementById('clrbtn').addEventListener('click',function (e){
+    e.preventDefault();
+     document.getElementById('height').value = 176;
+     document.getElementById('weight').value = 68;
+     document.getElementById('age').value = 20;
+     document.getElementById('gender').value = "male";
+});
+
 document.getElementById('calculate').addEventListener('click', function(e) {
     e.preventDefault();
     var height = parseFloat(document.getElementById('height').value);
@@ -21,9 +29,11 @@ document.getElementById('calculate').addEventListener('click', function(e) {
             '<span class="text-red-500">Please enter valid height and weight.</span>';
     }
 });
+
 function calculateBMI(height, weight) {
     return weight / Math.pow(height / 100, 2);
 }
+
 function getBMICategory(bmi) {
     if (bmi < 18.5) {
         return 'Underweight';
