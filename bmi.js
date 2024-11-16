@@ -1,12 +1,10 @@
-document.getElementById('calculate').addEventListener('click', function() {
+document.getElementById('calculate').addEventListener('click', function(e) {
+    e.preventDefault();
     var height = parseFloat(document.getElementById('height').value);
     var weight = parseFloat(document.getElementById('weight').value);
-    var gender = parseFloat(document.getElementById('gender').value);
-    var age= parseFloat(document.getElementById('age').value);
-    var m = parseFloat(document.getElementById('m').value);
-    var f = parseFloat(document.getElementById('f').value);
     var heightUnit = document.getElementById('heightUnit').value;
     var weightUnit = document.getElementById('weightUnit').value;
+
     if (!isNaN(height) && !isNaN(weight) && height > 0 && weight > 0) {
         if (heightUnit === 'ft') {
             height *= 30.48;
